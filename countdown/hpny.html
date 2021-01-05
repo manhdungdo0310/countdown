@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Click Me</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<style>
+body {
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20200813/pngtree-beautiful-gold-black-2021-happy-new-year-background-image_390656.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+h1 {
+	text-align: center;
+	margin: 50px;
+  font-size: 50px;
+}
+</style>
+</head>
+<body>
+  <center id="countdown"></center>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 1, 2021 00:00:00").getTime();
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("countdown").innerHTML = "<h1 style='color: red'>Let's countdown with me:<h1 style='color: white'>" + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s</h1>";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "<div class='container'><h1 style='color: white'>Chúc mừng vì một năm ăn hại nữa đã trôi qua :)) 🥂</h1><img src='https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif'</div>";
+    alert("HAPPY NEW YEAR");
+  }
+}, 1000);
+</script>
+</body>
+</html>
